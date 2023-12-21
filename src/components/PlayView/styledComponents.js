@@ -29,7 +29,7 @@ export const ScoreboardContainer = styled.div`
   border: 2px solid #ffffff;
   border-radius: 15px;
 `
-export const GameName = styled.p`
+export const GameName = styled.h1`
   font-family: 'Bree Serif';
   color: #ffffff;
 `
@@ -95,4 +95,45 @@ export const RulesButton = styled.button`
   cursor: pointer;
   border-radius: 5px;
   margin-bottom: 20px;
+`
+export const ModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  width: 350px;
+  height: 230px;
+  border-radius: 16px;
+  @media screen and (min-width: 768px) {
+    width: 500px;
+    height: 500px;
+  }
+`
+export const CloseButton = styled.button`
+  align-self: flex-end;
+  width: 28px;
+  height: 28px;
+  border: none;
+  margin-top: 18px;
+  margin-right: 18px;
+  outline: none;
+  cursor: pointer;
+`
+
+export const RulesContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+`
+
+export const RulesImage = styled.img`
+  margin-top: 12px;
+  margin-bottom: 28px;
+  width: 150px;
+  height: 150px;
+  @media screen and (min-width: 768px) {
+    width: 380px;
+    height: 380px;
+  }
 `

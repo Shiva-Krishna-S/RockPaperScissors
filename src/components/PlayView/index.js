@@ -1,4 +1,6 @@
 import {Component} from 'react'
+import Popup from 'reactjs-popup'
+import {RiCloseLine} from 'react-icons/ri'
 
 import ChoiceItem from '../ChoiceItem'
 import GameResultView from '../GameResultView'
@@ -14,6 +16,10 @@ import {
   ChoicesContainer,
   ImagesContainer,
   RulesButton,
+  ModalContainer,
+  CloseButton,
+  RulesContainer,
+  RulesImage,
 } from './styledComponents'
 
 class PlayView extends Component {
@@ -35,7 +41,7 @@ class PlayView extends Component {
         result = 'YOU WON'
       } else if (opponentChoiceId === 'PAPER') {
         updatedScore -= 1
-        result = 'YOU LOST'
+        result = 'YOU LOSE'
       } else {
         result = 'IT IS DRAW'
       }
@@ -45,7 +51,7 @@ class PlayView extends Component {
         result = 'YOU WON'
       } else if (opponentChoiceId === 'ROCK') {
         updatedScore -= 1
-        result = 'YOU LOST'
+        result = 'YOU LOSE'
       } else {
         result = 'IT IS DRAW'
       }
@@ -55,7 +61,7 @@ class PlayView extends Component {
         result = 'YOU WON'
       } else if (opponentChoiceId === 'SCISSORS') {
         updatedScore -= 1
-        result = 'YOU LOST'
+        result = 'YOU LOSE'
       } else {
         result = 'IT IS DRAW'
       }
@@ -84,6 +90,28 @@ class PlayView extends Component {
       gameResult: '',
     })
   }
+
+  renderRuleButton = () => (
+    <Popup modal trigger={<RulesButton>Rules</RulesButton>}>
+      {close => (
+        <ModalContainer>
+          <CloseButton
+            type="button"
+            aria-label="close button"
+            onClick={() => close()}
+          >
+            <RiCloseLine size={20} color="#231f20" />
+          </CloseButton>
+          <RulesContainer>
+            <RulesImage
+              src="https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/rules-image.png"
+              alt="rules"
+            />
+          </RulesContainer>
+        </ModalContainer>
+      )}
+    </Popup>
+  )
 
   render() {
     const {
@@ -130,7 +158,7 @@ class PlayView extends Component {
                 ))}
               </ImagesContainer>
             )}
-            <RulesButton>Rules</RulesButton>
+            {this.renderRuleButton()}
           </ChoicesContainer>
         </ResponsiveContainer>
       </PlayViewContainer>

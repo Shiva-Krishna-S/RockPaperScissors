@@ -7,14 +7,16 @@ const ChoiceItem = props => {
     onSelectionOfChoice(id)
   }
 
+  const buttonName = `${id.toLowerCase()}Button`
   return (
     <ListItem>
       <ChoiceImageButton
         type="button"
         aria-label="choice image"
         onClick={onClickImage}
+        data-testid={buttonName}
       >
-        <ChoiceImage src={imageUrl} />
+        <ChoiceImage src={imageUrl} alt={id} />
       </ChoiceImageButton>
     </ListItem>
   )

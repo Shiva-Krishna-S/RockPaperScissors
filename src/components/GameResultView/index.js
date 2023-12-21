@@ -35,11 +35,11 @@ const GameResultView = props => {
       <PlayersContainer>
         <PlayerChoice>
           <PlayerText>YOU</PlayerText>
-          <SelectedImage src={yourImage} />
+          <SelectedImage src={yourImage} alt="your choice" />
         </PlayerChoice>
         <PlayerChoice>
           <PlayerText>OPPONENT</PlayerText>
-          <SelectedImage src={opponentsImage} />
+          <SelectedImage src={opponentsImage} alt="opponent choice" />
         </PlayerChoice>
       </PlayersContainer>
       <ResultContainer>

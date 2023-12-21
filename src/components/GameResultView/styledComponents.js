@@ -7,6 +7,7 @@ export const GameResultContainer = styled.div`
   margin-top: 15px;
   @media screen and (min-width: 768px) {
     margin-top: 45px;
+  }
 `
 
 export const PlayersContainer = styled.div`
